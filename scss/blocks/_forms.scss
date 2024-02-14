@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+label {
+    --_form-label-font-family: var(--form-label-font-family, #{$form-label-font-family});
+    --_form-label-font-size: var(--form-label-font-size, #{$form-label-font-size});
+    --_form-label-font-weight: var(--form-label-font-weight, #{$form-label-font-weight});
+    --_form-label-foreground: var(--form-label-foreground, #{$form-label-foreground});
+
+    font-family: var(--_form-label-font-family);
+    font-size: var(--_form-label-font-size);
+    font-weight: var(--_form-label-font-weight);
+    color: var(--_form-label-foreground);
+}
+
+input:not(.button) {
+    --_form-input-font-size: var(--form-input-font-size, #{$form-input-font-size});
+    --_form-input-font-weight: var(--form-input-font-weight, #{$form-input-font-weight});
+    --_form-input-padding: var(--form-input-padding, #{$form-input-padding});
+    --_form-input-border: var(--form-input-border, #{$form-input-border});
+    --_form-input-border-radius: var(--form-input-border-radius, #{$form-input-border-radius});
+
+    --_form-input-foreground: var(--form-input-foreground, #{$form-input-foreground});
+    --_form-input-background: var(--form-input-background, #{$form-input-background});
+
+    font-size: var(--_form-input-font-size);
+    font-weight: var(--_form-input-font-weight);
+    padding: var(--_form-input-padding);
+    border: var(--_form-input-border);
+    border-radius: var(--_form-input-border-radius);
+}
+
+::placeholder {
+    --_form-placeholder-font-family: var(--form-placeholder-font-family, #{$form-placeholder-font-family});
+    --_form-placeholder-font-weight: var(--form-placeholder-font-weight, #{$form-placeholder-font-weight});
+    --_form-placeholder-foreground: var(--form-placeholder-foreground, #{$form-placeholder-foreground});
+
+    font-family: var(--_form-placeholder-font-family);
+    font-weight: var(--_form-placeholder-font-weight);
+    color: var(--_form-placeholder-foreground);
+}

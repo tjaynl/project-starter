@@ -1,0 +1,82 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+.full-width-split-screen {
+    --_full-width-split-screen-padding-inline: var(--full-width-split-screen-padding-inline, #{$wrapper-padding-inline});
+    --_full-width-split-screen-max-width: var(--full-width-split-screen-max-width, #{$wrapper-max-width});
+
+    --_content-region-space: var(--content-region-space, #{$region-space});
+    --_content-padding: var(--content-padding, clamp(1rem, 5vw, 3rem));
+
+    position: relative;
+    padding-block: 0;
+
+    @include mq(md) {
+        display: grid;
+        grid-template-columns: minmax(var(--_full-width-split-screen-padding-inline), 1fr) minmax(0, calc(var(--_full-width-split-screen-max-width) / 2)) minmax(0, calc(var(--_full-width-split-screen-max-width) / 2)) minmax(var(--_full-width-split-screen-padding-inline), 1fr);
+    }
+}
+
+
+.full-width-split-screen > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &:first-child {
+        grid-column: 1 / 3;
+    }
+
+    &:last-child {
+        grid-column: 3 / -1;
+    }
+}
+
+
+.full-width-split-screen > :not(img) {
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    padding-block: var(--_content-region-space);
+    padding-inline: var(--_full-width-split-screen-padding-inline);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: inherit;
+        z-index: -1;
+    }
+}
+
+
+.full-width-split-screen > :not(img) {
+    &:first-child {
+        grid-column: 2 / 3;
+
+        &::before {
+            grid-column: 1 / 2;
+        }
+
+        @include mq(md) {
+            padding-left: 0;
+            padding-right: var(--_content-padding);
+        }
+    }
+
+    &:last-child {
+        grid-column: 3 / 4;
+
+        &::before {
+            grid-column: 4 / -1;
+        }
+
+        @include mq(md) {
+            padding-right: 0;
+            padding-left: var(--_content-padding);
+        }
+    }
+}

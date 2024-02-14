@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+.content-grid,
+.full-width {
+    --_content-grid-padding-inline: var(--content-grid-padding-inline, #{$wrapper-padding-inline});
+    --_content-grid-content-width: var(--content-grid-content-width, #{$wrapper-max-width});
+    --_content-grid-bleed-width: var(--content-grid-bleed-width, #{$wrapper-max-width-bleed});
+
+    --_bleed-size: calc((var(--_content-grid-bleed-width) - var(--_content-grid-content-width)) / 2);
+
+    display: grid;
+    grid-template-columns: [full-width-start] minmax(var(--_content-grid-padding-inline), 1fr) [bleed-start] minmax(0, var(--_content-grid-bleed-width)) [content-start] min(var(--_content-grid-content-width), 100% - (var(--_content-grid-padding-inline) *2)) [content-end] minmax(0, var(--_content-grid-bleed-width)) [bleed-end] minmax(var(--_content-grid-padding-inline), 1fr) [full-width-end];
+    justify-items: start;
+
+    & > :not(.full-width, .bleed) {
+        grid-column: content;
+    }
+
+    & > .bleed {
+        grid-column: bleed;
+    }
+
+    & > .full-width {
+        grid-column: full-width;
+    }
+}

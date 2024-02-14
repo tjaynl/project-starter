@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+// 
+// -----------------------------------------------------------------------------
+
+.auto-grid {
+    --_grid-placement: var(--grid-placement, auto-fit);
+    --_grid-min-item-size: var(--grid-min-item-size, 16rem);
+    --_grid-gap: var(--grid-gap, 1rem);
+
+    display: grid;
+    grid-template-columns: repeat(var(--_grid-placement), minmax(var(--_grid-min-item-size), 1fr));
+    gap: var(--_grid-gap);
+}
+
+
+.auto-grid {
+    &[data-layout="halfs"] {
+        --grid-placement: auto-fill;
+        --grid-min-item-size: clamp(16em, 50vw, 26em);
+    }
+
+    &[data-layout="thirds"] {
+        --grid-placement: auto-fill;
+        --grid-min-item-size: clamp(16em, 33%, 22em);
+    }
+
+    &[data-rows="masonry"] {
+        grid-template-rows: masonry;
+        align-items: start;
+    }
+}

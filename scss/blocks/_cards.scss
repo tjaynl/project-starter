@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+// 
+// -----------------------------------------------------------------------------
+
+.card {
+    --_card-font-family: var(--card-font-family, #{$card-font-family});
+    --_card-line-height: var(--card-line-height, #{$card-line-height});
+
+    --_card-foreground: var(--card-foreground, #{$card-foreground});
+    --_card-background: var(--card-background, #{$card-background});
+
+    --_card-flow-space: var(--card-flow-space, #{$card-flow-space});
+    --_card-padding: var(--card-padding, #{$card-padding});
+    --_card-border-radius: var(--card-border-radius, #{$card-border-radius});
+    --_card-box-shadow: var(--card-box-shadow, #{$card-box-shadow});
+
+    display: grid;
+    gap: var(--_card-flow-space);
+    font-family: var(--_card-font-family);
+    line-height: var(--_card-line-height);
+    color: var(--_card-foreground);
+    background: var(--_card-background);
+    border-radius: var(--_card-border-radius);
+    box-shadow: var(--_card-box-shadow);    
+}

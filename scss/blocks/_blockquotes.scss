@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+// Blockquote(s)
+// -----------------------------------------------------------------------------
+
+.blockquote {
+    --_blockquote-font-family: var(--blockquote-font-family, #{$blockquote-font-family});
+    --_blockquote-font-size: var(--blockquote-font-size, #{$blockquote-font-size});
+    --_blockquote-border-color: var(--blockquote-border-color, #{$blockquote-border-color});
+    --_blockquote-border: var(--blockquote-border, #{$blockquote-border});
+    --_blockquote-margin: var(--blockquote-margin, #{$blockquote-margin});
+    --_blockquote-padding: var(--blockquote-padding, #{$blockquote-padding});
+    
+    --_blockquote-foreground: var(--blockquote-foreground, #{$blockquote-foreground});
+    --_blockquote-background: var(--blockquote-background, #{$blockquote-background});
+
+    --_blockquote-icon-size: var(--blockquote-icon-size, #{$blockquote-icon-size});
+    --_blockquote-icon-spacer: var(--blockquote-icon-spacer, #{$blockquote-icon-spacer});
+
+    --_blockquote-icon-foreground: var(--blockquote-icon-foreground, #{$blockquote-icon-foreground});
+
+    margin: var(--_blockquote-margin);
+    padding: var(--_blockquote-padding);
+    border-left: var(--_blockquote-border) var(--_blockquote-border-color);
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+
+.blockquote p {
+    font-family: var(--_blockquote-font-family);
+    font-size: var(--_blockquote-font-size);
+    color: var(--_blockquote-foreground);
+
+    &::before,
+    &::after {
+        font-size: var(--_blockquote-icon-size);
+        line-height: .1em;
+        vertical-align: -0.4em;
+    }
+
+    &::before {
+        content: open-quote;
+        margin-right: var(--_blockquote-icon-spacer);
+    }
+
+    &::after {
+        content: close-quote;
+        margin-left: var(--_blockquote-icon-spacer);
+    }
+}

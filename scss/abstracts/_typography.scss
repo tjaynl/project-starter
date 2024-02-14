@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+// Default font stacks
+
+$-ff-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+$-ff-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$-ff-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+// Font-families used in te
+
+$font-family-base: $-ff-sans;
+$font-family-accent: $-ff-serif;
+$font-family-mono: $-ff-mono;
+
+
+
+// -----------------------------------------------------------------------------
+// Font sizes
+// -----------------------------------------------------------------------------
+
+$font-sizes-map: (
+    "200": clamp(0.6944rem, 0.6921rem + 0.0119vi, 0.7035rem),
+    "300": clamp(0.8333rem, 0.8059rem + 0.1374vi, 0.9377rem),
+    "400": clamp(1rem, 0.9342rem + 0.3289vi, 1.25rem),
+    "500": clamp(1.2rem, 1.0773rem + 0.6135vi, 1.6663rem),
+    "600": clamp(1.44rem, 1.2344rem + 1.0278vi, 2.2211rem),
+    "700": clamp(1.728rem, 1.4036rem + 1.622vi, 2.9607rem),
+    "800": clamp(2.0736rem, 1.5807rem + 2.4646vi, 3.9467rem),
+    "900": clamp(2.4883rem, 1.7587rem + 3.6481vi, 5.2609rem),
+);
+
+
+
+// -----------------------------------------------------------------------------
+// Font weights
+// -----------------------------------------------------------------------------
+
+$font-weights-map: (
+    "thin": 100,
+    "extralight": 200,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "extrabold": 800,
+    "black": 900,
+);

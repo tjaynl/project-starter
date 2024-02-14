@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+.wrapper {
+    --_wrapper-max-width: var(--wrapper-max-width, #{$wrapper-max-width});
+    --_wrapper-padding-inline: var(--wrapper-padding-inline, #{$wrapper-padding-inline});
+
+    max-width: var(--_wrapper-max-width);
+    padding-inline: var(--_wrapper-padding-inline);
+    margin-inline: auto;
+}

@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+body {
+    --_foreground: var(--_foreground, #{$body-foreground});
+    --_background: var(--_background, #{$body-background});
+
+    --_font-family: var(--font-family, #{$body-font-family});
+    --_font-size: var(--font-size, #{$body-font-size});
+    --_font-weight: var(--font-weight, #{$body-font-weight});
+    --_line-height: var(--line-height, #{$body-line-height});
+
+    font-family: var(--_font-family);
+    font-size: var(--_font-size);
+    font-weight: var(--_font-weight);
+    line-height: var(--_line-height);
+    color: var(--_foreground);
+    background: var(--_background);
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Anchors / Links
+// -----------------------------------------------------------------------------
+
+a:not([class]) {
+    --_link-foreground: var(--link-foreground, #{$link-foreground});
+    --_link-line-offset: var(--link-line-offset, #{$link-line-offset});
+    --_link-text-decoration: var(--link-text-decoration, #{$link-text-decoration});
+
+    color: var(--_link-foreground);
+    text-decoration: var(--_link-text-decoration);
+    text-underline-offset: var(--_link-line-offset);
+
+    &:is(:hover, :focus) {
+        --link-foreground: #{$link-foreground-hover};
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// Headings
+// -----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+    --_heading-foreground: var(--heading-foreground, #{$heading-foreground});
+    --_heading-font-family: var(--heading-font-family, #{$heading-font-family});
+    --_heading-font-size: var(--heading-font-size, #{$heading-font-size});
+    --_heading-font-weight: var(--heading-font-weight, #{$heading-font-weight});
+    --_heading-line-height: var(--heading-line-height, #{$heading-line-height});
+
+    color: var(--_heading-foreground);
+    font-family: var(--_heading-font-family);
+    font-size: var(--_heading-font-size);
+    font-weight: var(--_heading-font-weight);
+    line-height: var(--_heading-line-height);
+}

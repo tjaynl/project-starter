@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+.with-sidebar {
+    --_content-min-width: 45ch;
+    --_sidebar-size: 18.75em;
+    --_gap: var(--size-s-l);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--_gap);
+
+    & > main {
+        flex-grow: 9999;
+        flex-basis: calc(
+            ((var(--_content-min-width) - (100% - var(--_sidebar-size) - var(--_gap))) * 9999)
+        );
+    }
+
+    & > aside {
+        flex-basis: var(--_sidebar-size);
+        flex-grow: 1;
+    }
+}
