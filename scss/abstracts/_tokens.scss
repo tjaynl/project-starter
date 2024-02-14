@@ -87,6 +87,25 @@ $site-header-padding: var(--size-s) var(--size-xs);
 $site-header-foreground: $body-foreground;
 $site-header-background: $body-background;
 
+// -----------------------------------------------------------------------------
+// Site Navigation
+// -----------------------------------------------------------------------------
+
+$site-nav-order: 3;
+$site-nav-link-font-family: $body-font-family;
+$site-nav-link-font-size: var(--fs-400);
+$site-nav-link-font-weight: var(--fw-light);
+$site-nav-link-padding: var(--size-s) var(--size-xs);
+
+$site-nav-link-text-decoration: none;
+$site-nav-link-text-transform: capitalize;
+
+$site-nav-link-foreground: var(--neutral-600);
+$site-nav-link-foreground-hover: var(--neutral-200);
+
+$site-nav-link-font-weight-focus: var(--fw-medium);
+$site-nav-link-foreground-focus: var(--neutral-800);
+
 
 
 // -----------------------------------------------------------------------------
@@ -111,8 +130,8 @@ $hamburger-background: var(--neutral-50);
 
 $wrapper-padding-inline: var(--size-s-l);
 
-$wrapper-max-width: var(--wrap-size-xl);
-$wrapper-max-width-bleed: var(--wrap-size-2xl);
+$wrapper-max-width: var(--wrap-size-lg);
+$wrapper-max-width-bleed: var(--wrap-size-xl);
 
 
 
@@ -124,7 +143,7 @@ $card-font-family: $body-font-family;
 $card-line-height: 1.25;
 
 $card-flow-space: var(--size-xs);
-$card-padding: var(--size-l);
+$card-padding: var(--size-s-l);
 $card-border-radius: $border-radius-1;
 $card-box-shadow: $box-shadow-sm;
 
@@ -158,6 +177,29 @@ $form-input-background: var(--neutral-100);
 $form-placeholder-font-family: $form-input-font-family;
 $form-placeholder-font-weight: $form-input-font-weight;
 $form-placeholder-foreground: var(--primary-300);
+
+
+
+// -----------------------------------------------------------------------------
+// Button(s)
+// -----------------------------------------------------------------------------
+
+$button-font-family: $body-font-family;
+$button-font-size: var(--fs-300);
+$button-font-weight: var(--fw-medium);
+$button-line-height: 1;
+
+$button-padding: var(--size-s) var(--size-m) var(--size-xs);
+$button-border-radius: .25em;
+
+$button-foreground: var(--neutral-600);
+$button-foreground-hover: var(--neutral-950);
+$button-foreground-active: var(--neutral-50);
+
+
+$button-background: var(--neutral-100);
+$button-background-hover: var(--neutral-200);
+$button-background-active: var(--neutral-950);
 
 
 

@@ -20,8 +20,10 @@
     gap: var(--_card-flow-space);
     font-family: var(--_card-font-family);
     line-height: var(--_card-line-height);
+    padding: var(--_card-padding);
     color: var(--_card-foreground);
     background: var(--_card-background);
     border-radius: var(--_card-border-radius);
-    box-shadow: var(--_card-box-shadow);    
+    box-shadow: var(--_card-box-shadow);   
+    justify-items: start;
 }

@@ -18,6 +18,7 @@
 
     & > :not(.full-width, .bleed) {
         grid-column: content;
+        width: 100%;
     }
 
     & > .bleed {

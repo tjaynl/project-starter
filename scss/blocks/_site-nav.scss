@@ -1,0 +1,92 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+// Place these scss variables in you abstracts/tokens.scss and comment out
+// these variables in order to keep everything clean in 1 file for easy editting
+// -----------------------------------------------------------------------------
+
+// $site-nav-order: 3;
+// $site-nav-link-font-family: $body-font-family;
+// $site-nav-link-font-size: var(--fs-400);
+// $site-nav-link-font-weight: var(--fw-light);
+// $site-nav-link-padding: var(--size-s) var(--size-xs);
+
+// $site-nav-link-text-decoration: none;
+// $site-nav-link-text-transform: capitalize;
+
+// $site-nav-link-foreground: var(--neutral-600);
+// $site-nav-link-foreground-hover: var(--neutral-200);
+
+// $site-nav-link-font-weight-focus: var(--fw-medium);
+// $site-nav-link-foreground-focus: var(--neutral-800);
+
+// -----------------------------------------------------------------------------
+//
+// -----------------------------------------------------------------------------
+
+.site-nav {
+    --_site-nav-order: var(--site-nav-order, #{$site-nav-order});
+
+    display: none;
+    width: 100%;
+    order: var(--_site-nav-order);
+
+    @include mq(md) {
+        display: flex;
+        width: auto;
+    }
+
+    &.open {
+        display: block;
+    }
+}
+
+
+
+.site-nav {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none inside;
+    }
+
+    &__item {
+        max-width: unset;
+        width: 100%;
+
+        @include mq(md) {
+            width: auto;
+        }
+    }
+}
+
+
+.site-nav__link {
+    --_site-nav-link-font-family: var(--site-nav-link-font-family, #{$site-nav-link-font-family});
+    --_site-nav-link-font-size: var(--site-nav-link-font-size, #{$site-nav-link-font-size});
+    --_site-nav-link-font-weight: var(--site-nav-link-font-weight, #{$site-nav-link-font-weight});
+    --_site-nav-link-text-transform: var(--site-nav-link-text-transform, #{$site-nav-link-text-transform});
+    --_site-nav-link-text-decoration: var(--site-nav-link-text-decoration, #{$site-nav-link-text-decoration});
+    --_site-nav-link-padding: var(--site-nav-link-padding, #{$site-nav-link-padding});
+    --_site-nav-link-foreground: var(--site-nav-link-foreground, #{$site-nav-link-foreground});
+
+
+    display: block;
+    font-family: var(--_site-nav-link-font-family);
+    font-size: var(--_site-nav-link-font-size);
+    font-weight: var(--_site-nav-link-font-weight);
+    text-transform: var(--_site-nav-text-transform);
+    text-decoration: var(--_site-nav-link-text-decoration);
+    padding: var(--_site-nav-link-padding);
+    color: var(--_site-nav-link-foreground);
+
+    &:hover {
+        --site-nav-link-foreground: #{$site-nav-link-foreground-hover};
+    }
+
+    &[aria-current="page"] {
+        --site-nav-link-font-weight: #{$site-nav-link-font-weight-focus};
+        --site-nav-link-foreground: #{$site-nav-link-foreground-focus};
+    }
+}

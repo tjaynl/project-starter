@@ -5,8 +5,8 @@
 // -----------------------------------------------------------------------------
 
 body {
-    --_foreground: var(--_foreground, #{$body-foreground});
-    --_background: var(--_background, #{$body-background});
+    --_foreground: var(--foreground, #{$body-foreground});
+    --_background: var(--background, #{$body-background});
 
     --_font-family: var(--font-family, #{$body-font-family});
     --_font-size: var(--font-size, #{$body-font-size});
@@ -27,7 +27,7 @@ body {
 // Anchors / Links
 // -----------------------------------------------------------------------------
 
-a:not([class]) {
+a {
     --_link-foreground: var(--link-foreground, #{$link-foreground});
     --_link-line-offset: var(--link-line-offset, #{$link-line-offset});
     --_link-text-decoration: var(--link-text-decoration, #{$link-text-decoration});
